@@ -1,98 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Hackers X Club</title>
+  <title>Chat Logs</title>
+  <style>
+    #chatbox {
+      border: 1px solid #000;
+      height: 300px;
+      overflow: auto;
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="/images/HACKERS-X .png" alt="Hackers X Logo">
-                <h1>Hackers X</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section class="hero">
-        <div class="hero-text" style="color: black;">
-            <h2>Welcome to Hackers-X</h2>
-            <p>Exploring the world of technology, cybersecurity, and innovation.</p>
-            <a href="#about" class="btn">Learn More</a>
-        </div>
-    </section>
-
-    <section class="about" id="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>We are a passionate group of students dedicated to learning about technology, ethical hacking, and cybersecurity. Join us to enhance your skills and knowledge!</p>
-            <!--Sponser-->
-            <h3>Leadership</h3>
-            <h4>Club Sponser</h4>
-            <p>Christopher Redieske</p>
-            <p>About Me:</p>
-            <!--President-->
-            <h4>Club President</h4>
-            <p>Alexa Kane Earnest</p>
-            <p>About Me:<br>I am interested in technology and cyber security and teaching others how to be safe and protect yourself online and to identify vulnerabilities within a website. I formed Hackers-X in early 2022 as a Discord Server but later deleted it to create Hackers-X as a club here at CHS. Other than coding, I like to play People Playground.</p>
-            <!--Vice President-->
-            <h4>Club Vice President</h4>
-            <p>Maximiliano Gonzalez-Magana</p>
-            <p>About Me:</p>
-            <!--Club Secretary-->
-            <h4>Club Secretary</h4>
-            <p>None</p>
-            <p>About Me:</p>
-            <!--Club Treasurer-->
-            <h4>Club Treasurer</h4>
-            <p>None</p>
-            <p>About Me</p>
-        </div>
-    </section>
-
-    <section class="events" id="events">
-        <div class="container">
-            <h2>Upcoming Events</h2>
-            <ul class="event-list">
-                <!--
-                    <li>
-                    <h3>No Event Scheduled</h3>
-                    <p>Date: Month Day, Year</p>
-                    <p>Description</p>
-                </li> 
-                -->               
-                <li>
-                    <h3>2023-24 Club Registration</h3>
-                    <p>Date: August 31, 2023</p>
-                    <p>Learn about web vulnerabilities and how to secure applications.</p>
-                </li>
-
-            </ul>
-        </div>
-    </section>
-
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or inquiries, feel free to get in touch with us.</p>
-            <ul class="contact-info">
-                <li>Email: aearnes01@charlottesvilleschools.org</li>
-                <li>Phone: (434) 987-8819</li>
-            </ul>
-        </div>
-    </section>
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Hackers-X. All rights reserved.</p>
-        </div>
-    </footer>
+  <div id="chatbox">
+    <?php include 'chatlogs.txt'; ?>
+  </div>
+  <form method="post" action="submit.php">
+    <input type="text" id="message" name="message" placeholder="Type a message...">
+    <button type="submit" name="submit">Send</button>
+  </form>
 </body>
 </html>
