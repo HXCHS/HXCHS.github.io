@@ -1,96 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Hackers-X</title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+		<script
+			src="https://cdn.jsdelivr.net/npm/psl@1.9.0/dist/psl.min.js"
+			integrity="sha256-pGXYc481WIYNZUsKubKxCxQUydhNrlM5S8g5eMU8fdw="
+			crossorigin="anonymous"></script>
+		<title>CwC Bypass</title>
+		<style>
+			.warn {
+				color: red;
+			}
+			main {
+				text-align: center;
+			}
+			input {
+				width: 80%;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>CwC Bypass</h1>
+			<p>
+				Bypass browser level internet restrictions by using Coding with Chrome
+			</p>
+		</header>
+		<main>
+			<p class="notice, warn" style="display: none">
+				<b>Warning!</b><br />
+				You are not using Coding with Chrome!
+			</p>
+			<input
+				type="url"
+				id="search"
+				placeholder="Search or type a URL"
+				onkeyup="searchBoxinput();" />
+			<select name="searchEngine" id="searchEngine">
+				<option value="google">Google</option>
+				<option value="bing">Bing</option>
+				<option value="duckduckgo">DuckDuckGo</option>
+				<option value="yahoo">Yahoo</option>
+				<option value="deviantart">DeviantArt</option>
+			</select>
+			<button type="button" id="submit" disabled onclick="browse();">Go</button>
+		</main>
+	</body>
+	<script async>
+		if (navigator.userAgent !== "CwC sandbox") {
+			console.warn("Coding with Chrome was not detected!");
+			const x = document.querySelector(".warn");
+			x.style.display = "";
+		}
 
-    
-    <section class="hero" style="background-image: url(images/HACKERS-X\ .png); background-size: 400px 400px; background-repeat: no-repeat;">
-        <div class="hero-text" style="color: black;">
-        </div>
-    </section>
-    <header>
-        <nav>
-            <div class="logo">
-            </div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section class="about" id="about">
-        <div class="container">
-            <h2>ABOUT US</h2>
-            <p style="color: whitesmoke;font-style: italic;">¨ We are a passionate group of students dedicated to learning about technology, ethical hacking, and cybersecurity. Join us to enhance your skills and knowledge.¨</p>
-          <br>
-            <h3>Leadership</h3>          
-            <!--Sponser-->
-            <h4>Club Sponser</h4>
-            <p>Christopher Redieske</p>
-            <p>About Me:</p>
-            <!--President-->
-            <h4>Club President</h4>
-            <p>Alexa Kane Earnest</p>
-            <p>About Me:<br>I am interested in technology and cyber security and teaching others how to be safe and protect yourself online and to identify vulnerabilities within a website. I formed Hackers-X in early 2022 as a Discord Server but later deleted it to create Hackers-X as a club here at CHS. Other than coding, I like to play People Playground.</p>
-            <!--Vice President-->
-            <h4>Club Vice President</h4>
-            <p>None</p>
-            <p>About Me:</p>
-            <!--Club Secretary-->
-            <h4>Club Secretary</h4>
-            <p>None</p>
-            <p>About Me:</p>
-            <!--Club Treasurer-->
-            <h4>Club Treasurer</h4>
-            <p>None</p>
-            <p>About Me</p>
-        </div>
-    </section>
+		const searchbox = document.querySelector("#search");
+		const submit = document.querySelector("#submit");
+		const searchEngineInput = document.querySelector("#searchEngine");
 
-    <section class="events" id="events">
-        <div class="container">
-            <h2>Upcoming and Past Events</h2>
-            <ul class="event-list">
-                <!--
-                    <li>
-                    <h3>No Event Scheduled</h3>
-                    <p>Date: Month Day, Year</p>
-                    <p>Description</p>
-                </li> 
-                -->               
-                <li>
-                    <h3>2023-24 Club Pre-Enrollment</h3>
-                    <p>Status: Active</p>
-                    <p>Date: <b>NOW</b></p>
-                    <p>Info: Enroll into Hackers-X before spots run out.</p>
-                  <p>Link: <a href="https://forms.gle/USw5SuDmdpbiDJD28">LINK</a> press the highlighted text for the form.</p>
-                </li>
+		let searchEngine = "www.google.com/search";
 
-            </ul>
-        </div>
-    </section>
+		searchbox.addEventListener("keypress", function (event) {
+			if (event.key === "Enter") {
+				event.preventDefault();
+				submit.click();
+			}
+		});
 
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or inquiries, feel free to get in touch with us.</p>
-            <ul class="contact-info">
-                <li>Email: aearnes01@charlottesvilleschools.org</li>
-                <li>Phone: (434) 987-8819</li>
-            </ul>
-        </div>
-    </section>
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Hackers-X. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
+		async function browse() {
+			let url = new URL(`https://${searchbox.value}`);
+			if (searchEngineInput.value === "bing") searchEngine = "bing.com/search";
+			if (searchEngineInput.value === "yahoo")
+				searchEngine = "search.yahoo.com/search";
+			if (searchEngineInput.value === "duckduckgo")
+				searchEngine = "duckduckgo.com/";
+			if (searchEngineInput.value === "deviantart")
+				searchEngine = "youtube.com/watch?v=DLzxrzFCyOs";
+			if (
+				searchbox.value.startsWith("https://") ||
+				searchbox.value.startsWith("http://")
+			) {
+				window.location = searchbox.value;
+			} else if (searchbox.value.endsWith("/")) {
+				window.location = `https://${searchbox.value}`;
+			} else if (psl?.isValid(url.hostname)) {
+				window.location = `https://${searchbox.value}`;
+			} else if (searchbox.value) {
+				console.log(`Assuming "${searchbox.value}" as a search`);
+				window.location = `https://${searchEngine}?q=${searchbox.value}`;
+			}
+		}
+
+		function searchBoxinput() {
+			if (searchbox.value) {
+				submit.disabled = false;
+			} else {
+				submit.disabled = true;
+			}
+		}
+	</script>
 </html>
