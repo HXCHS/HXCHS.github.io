@@ -1,1 +1,1 @@
-# VRCHS.github.io
+# githubforjava.github.io/schoolresource1
