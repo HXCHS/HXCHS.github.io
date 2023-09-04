@@ -1,10 +1,10 @@
 /* Reset default styles */
 @font-face {
-  font-family: Clear Sans;
+  font-family: "Clear Sans";
   src: url(fonts/ClearSans-Regular-webfont.woff);
 }
 @font-face {
-  font-family: Clear Sans Bold;
+  font-family: "Clear Sans Bold";
   src: url(fonts/ClearSans-Bold-webfont.woff);
 }
 body, h1, h2, h3, ul,p {
@@ -12,7 +12,7 @@ body, h1, h2, h3, ul,p {
     padding: 0;
     background: black;
     color: white;
-    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+    font-family: "Clear Sans";
     font-size: 18px; }
 }
 body{
