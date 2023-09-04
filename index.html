@@ -3,6 +3,14 @@
 <title>School Resources</title>
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
+@font-face {
+  font-family: Clear Sans;
+  src: url(fonts/ClearSans-Regular-webfont.woff);
+}
+@font-face {
+  font-family: Clear Sans Bold;
+  src: url(fonts/ClearSans-Bold-webfont.woff);
+}
 <body>
 <iframe src="about:blank" id="aHR0cHM6Ly9jbG9ja3dvcmstb3MudmVyY2VsLmFwcC9vcy8=">
 </iframe>
@@ -24,7 +32,7 @@
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.4);
             display: none;
-            font: Clear Sans;
+            font-family: Clear Sans;
         }
         .popup-content {
             background-color: white;
@@ -33,12 +41,12 @@
             border: 1px solid #888888;
             width: 30%;
             font-weight: bolder;
-            font: Clear Sans;
+            font-family: Clear Sans;
         }
         .popup-content button {
             display: block;
             margin: 0 auto;
-            font: Clear Sans;
+            font-family: Clear Sans;
         }
         .show {
             display: block;
@@ -55,7 +63,7 @@
       </button>
     <div id="myPopup" class="popup">
         <div class="popup-content">
-            <h1 style="color:red;">
+            <h1 style="color:red;" font-family: Clear Sans Bold>
                   READ THIS... IT'S IMPORTANT
               </h1>
             <p> Hi and welcome to GITHUBFORJAVA'S CLOCKWORK!
