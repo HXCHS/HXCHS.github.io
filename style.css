@@ -1,8 +1,12 @@
 /* Reset default styles */
+@import url(fonts/clear-sans.css);
 body, h1, h2, h3, ul,p {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    background: black;
+    color: white;
+    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 18px; }
 }
 body{
   padding:5px;
