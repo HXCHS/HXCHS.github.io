@@ -1,23 +1,28 @@
 {
-  "name": "mathematics",
-  "version": "5.0.1",
+  "name": "Interstellar Proxy",
+  "version": "1.0.0",
+  "description": "By Interstellar Network",
   "type": "module",
   "engines": {
     "npm": ">=7.0.0",
     "node": ">=16.0.0"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "index.js"
   },
+  "keywords": [
+    "proxy"
+  ],
   "author": "",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@titaniumnetwork-dev/ultraviolet": "^1.0.10",
-    "@tomphttp/bare-server-node": "^1.2.6",
-    "express": "^4.18.2"
+    "@titaniumnetwork-dev/ultraviolet": "^1.0.8-beta",
+    "@tomphttp/bare-server-node": "^1.2.5",
+    "express": "^4.18.2",
+    "ultraviolet-static": "github:titaniumnetwork-dev/Ultraviolet-Static"
   },
   "devDependencies": {
-    "eslint": "^8.36.0",
-    "prettier": "^2.8.4"
+    "eslint": "^8.32.0",
+    "prettier": "^2.8.3"
   }
 }
