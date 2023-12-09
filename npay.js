@@ -1,0 +1,2 @@
+window.nitroAds=window.nitroAds||{createAd(){window.nitroAds.queue.push(['createAd',arguments])},queue:[]}
+window.nitroSponsor=window.nitroSponsor||{init(){window.nitroSponsor.queue.push(['init',arguments])},status:'init',queue:[]}
